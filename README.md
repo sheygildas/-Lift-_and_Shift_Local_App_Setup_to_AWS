@@ -93,6 +93,7 @@
     <b><a href="#Project-03">↥ back to top</a></b>
 </div>
 <br/>
+
 ### :closed_lock_with_key: Create Key Pairs
 
 <br/>
@@ -100,6 +101,7 @@
     <b><a href="#Project-03">↥ back to top</a></b>
 </div>
 <br/>
+
 ### :lock: Create Security groups
 
 <br/>
@@ -107,6 +109,7 @@
     <b><a href="#Project-03">↥ back to top</a></b>
 </div>
 <br/>
+
 ### :package: Launch Instances with user data 
 
 <br/>
@@ -114,6 +117,7 @@
     <b><a href="#Project-03">↥ back to top</a></b>
 </div>
 <br/>
+
 ### :earth_africa: Update IP to name mapping in route 53
 
 <br/>
@@ -121,6 +125,7 @@
     <b><a href="#Project-03">↥ back to top</a></b>
 </div>
 <br/>
+
 ### :rocket: Build Application from source code
 
 <br/>
@@ -128,6 +133,7 @@
     <b><a href="#Project-03">↥ back to top</a></b>
 </div>
 <br/>
+
 ### :package: Upload to S3 bucket
 
 <br/>
@@ -135,6 +141,7 @@
     <b><a href="#Project-03">↥ back to top</a></b>
 </div>
 <br/>
+
 ### :package: Download artifact to Tomcat Ec2 Instance
 
 <br/>
@@ -142,6 +149,7 @@
     <b><a href="#Project-03">↥ back to top</a></b>
 </div>
 <br/>
+
 ### :lock: Setup ELB with HTTPS 
 
 <br/>
@@ -149,6 +157,7 @@
     <b><a href="#Project-03">↥ back to top</a></b>
 </div>
 <br/>
+
 ### :earth_africa: Map ELB Endpoint to website name in DNS
 
 <br/>
@@ -156,6 +165,7 @@
     <b><a href="#Project-03">↥ back to top</a></b>
 </div>
 <br/>
+
 ### :hammer_and_wrench: Build Autoscaling Group for Tomcat Instances
 
 <br/>
@@ -163,6 +173,7 @@
     <b><a href="#Project-03">↥ back to top</a></b>
 </div>
 <br/>
+
 ## :earth_africa: Verify from browser
 
 <br/>
