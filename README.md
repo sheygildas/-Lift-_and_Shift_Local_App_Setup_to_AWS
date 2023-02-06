@@ -1,5 +1,5 @@
 # Project-03
-# Lift_and_Shift_Local_App_Setup_to_AWS
+# Lift and Shift Local App Setup to AWS Cloud
 ## :ledger: Index
 
 - [About The Project](#beginner-about-the-project)
