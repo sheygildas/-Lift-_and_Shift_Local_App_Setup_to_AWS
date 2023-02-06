@@ -7,8 +7,8 @@
 - [Tools](#hammer_and_wrench-Tools)
 - [Architecture of this project](#house-architecture-of-this-project)
 - [Steps to execute the project](#zap-steps-to-execute-the-project)
-  - [Login to AWS Account ](#electric_plug-login-to-aws-account )
-  - [Create Key Pairs](#package-create-key-pairs)
+  - [Login to AWS Account ](#key-login-to-aws-account )
+  - [Create Key Pairs](#closed_lock_with_key-create-key-pairs)
   - [Create Security groups](#package-create-security-groups)
   - [Launch Instances with user data](#bulb-launch-instances-with-user-data )
   - [Update IP to name mapping in route 53](#heavy_check_mark-update-ip-to-name-mapping-in-route-53)
@@ -24,7 +24,7 @@
 - [Resources](#page_facing_up-resources)
 - [Credit/Acknowledgment](#star2-creditacknowledgment)
 
-
+:closed_lock_with_key:
 ## :beginner:About The Project
 
 <br/>
@@ -86,37 +86,83 @@
 </div>
 <br/>
 
-### Login to AWS Account
-### Create Key Pairs
-### Create Security groups
-### Launch Instances with user data 
-### Update IP to name mapping in route 53
-### Build Application from source code
-### Upload to S3 bucket
-### Download artifact to Tomcat Ec2 Instance
-### Setup ELB with HTTPS 
-### Map ELB Endpoint to website name in DNS
-### Build Autoscaling Group for Tomcat Instances
-
-
-## :hammer_and_wrench: App Build
-
+### :key: Login to AWS Account
 
 <br/>
 <div align="right">
     <b><a href="#Project-03">↥ back to top</a></b>
 </div>
 <br/>
-
-## :rocket: App Deployment
-
+### :closed_lock_with_key: Create Key Pairs
 
 <br/>
 <div align="right">
     <b><a href="#Project-03">↥ back to top</a></b>
 </div>
 <br/>
+### :lock: Create Security groups
 
+<br/>
+<div align="right">
+    <b><a href="#Project-03">↥ back to top</a></b>
+</div>
+<br/>
+### :package: Launch Instances with user data 
+
+<br/>
+<div align="right">
+    <b><a href="#Project-03">↥ back to top</a></b>
+</div>
+<br/>
+### :earth_africa: Update IP to name mapping in route 53
+
+<br/>
+<div align="right">
+    <b><a href="#Project-03">↥ back to top</a></b>
+</div>
+<br/>
+### :rocket: Build Application from source code
+
+<br/>
+<div align="right">
+    <b><a href="#Project-03">↥ back to top</a></b>
+</div>
+<br/>
+### :package: Upload to S3 bucket
+
+<br/>
+<div align="right">
+    <b><a href="#Project-03">↥ back to top</a></b>
+</div>
+<br/>
+### :package: Download artifact to Tomcat Ec2 Instance
+
+<br/>
+<div align="right">
+    <b><a href="#Project-03">↥ back to top</a></b>
+</div>
+<br/>
+### :lock: Setup ELB with HTTPS 
+
+<br/>
+<div align="right">
+    <b><a href="#Project-03">↥ back to top</a></b>
+</div>
+<br/>
+### :earth_africa: Map ELB Endpoint to website name in DNS
+
+<br/>
+<div align="right">
+    <b><a href="#Project-03">↥ back to top</a></b>
+</div>
+<br/>
+### :hammer_and_wrench: Build Autoscaling Group for Tomcat Instances
+
+<br/>
+<div align="right">
+    <b><a href="#Project-03">↥ back to top</a></b>
+</div>
+<br/>
 ## :earth_africa: Verify from browser
 
 <br/>
