@@ -9,22 +9,20 @@
 - [Steps to execute the project](#zap-steps-to-execute-the-project)
   - [Login to AWS Account ](#key-login-to-aws-account )
   - [Create Key Pairs](#closed_lock_with_key-create-key-pairs)
-  - [Create Security groups](#package-create-security-groups)
+  - [Create Security groups](#lock-create-security-groups)
   - [Launch Instances with user data](#bulb-launch-instances-with-user-data )
-  - [Update IP to name mapping in route 53](#heavy_check_mark-update-ip-to-name-mapping-in-route-53)
-  - [Build Application from source code](#package-build-application-from-source-code)
-  - [Upload to S3 bucket](#package-upload-to-S3-bucket)
+  - [Update IP to name mapping in route 53](#earth_africa-update-ip-to-name-mapping-in-route-53)
+  - [Build Application from source code](#hammer_and_wrench-build-application-from-source-code)
+  - [Upload to S3 bucket](#rocket-upload-to-S3-bucket)
   - [Download artifact to Tomcat Ec2 Instance](#package-download-artifact-to-tomcat-ec2-instance)
-  - [Setup ELB with HTTPS ](#package-setup-elb-with-https )
-  - [Map ELB Endpoint to website name in DNS](#package-map-elb-endpoint-to-website-name-in-dns)
-  - [Build Autoscaling Group for Tomcat Instances](#package-build-autoscaling-group-for-tomcat-nstances)
-- [App Build](#hammer-build)  
-- [App Deployment](#rocket-deployment) 
+  - [Setup ELB with HTTPS ](#lock-setup-elb-with-https )
+  - [Map ELB Endpoint to website name in DNS](#earth_africa-map-elb-endpoint-to-website-name-in-dns)
+  - [Build Autoscaling Group for Tomcat Instances](#hammer_and_wrench-build-autoscaling-group-for-tomcat-nstances)
 - [Verify from browser](#earth_africa-verify-from-browser) 
 - [Resources](#page_facing_up-resources)
 - [Credit/Acknowledgment](#star2-creditacknowledgment)
 
-:closed_lock_with_key:
+
 ## :beginner:About The Project
 
 <br/>
@@ -110,7 +108,7 @@
 </div>
 <br/>
 
-### :package: Launch Instances with user data 
+### :bulb: Launch Instances with user data 
 
 <br/>
 <div align="right">
@@ -126,7 +124,7 @@
 </div>
 <br/>
 
-### :rocket: Build Application from source code
+### :hammer_and_wrench: Build Application from source code
 
 <br/>
 <div align="right">
@@ -134,7 +132,7 @@
 </div>
 <br/>
 
-### :package: Upload to S3 bucket
+### :rocket: Upload to S3 bucket
 
 <br/>
 <div align="right">
