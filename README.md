@@ -5,7 +5,8 @@
 - [About The Project](#beginner-about-the-project)
 - [Problem that this project solves ](#question-problem-that-this-project-solves)
 - [Solution to the problem.](#key-solution-to-the-problem)
-- [Tools](#hammer_and_wrench-Tools)
+- [Prerequisites](#hammer_and_wrench-prerequisites)
+- [AWS Services](#cloud-aws-services)
 - [Architecture of this project](#house-architecture-of-this-project)
 - [Steps to execute the project](#zap-steps-to-execute-the-project)
   - [Login to AWS Account ](#key-login-to-aws-account )
@@ -48,7 +49,7 @@
 </div>
 <br/>
 
-## :hammer_and_wrench: Tools
+## :hammer_and_wrench: Prerequisites
 - A tool
 - B tool
 
@@ -66,6 +67,13 @@
 </div>
 <br/>
 
+## :cloud: AWS Services
+
+<br/>
+<div align="right">
+    <b><a href="#Project-03">↥ back to top</a></b>
+</div>
+<br/>
 
 ## :beginner: Architecture of this project.
 
@@ -199,4 +207,3 @@
     <b><a href="#Project-03">↥ back to top</a></b>
 </div>
 <br/>
-
