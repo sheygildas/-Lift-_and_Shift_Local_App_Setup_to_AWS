@@ -7,18 +7,17 @@
 - [Tools](#hammer_and_wrench-Tools)
 - [Architecture of this project](#house-architecture-of-this-project)
 - [Steps to execute the project](#zap-steps-to-execute-the-project)
-  - [Setup tools ](#electric_plug-setup-tools )
-  - [Clone source code](#package-slone-source-code)
-  - [Go to the vagrant dir](#package-go-to-the-vagrant-dir)
-  - [Bring up the Virtual machines ](#bulb-bring-up-the-virtual-machines)a
-  - [Validate](#heavy_check_mark-validate)
-  - [Setup All the services](#package-setup-all-the-services)
-    - [Mysql](#package-Mysql)
-    - [Memcached](#package-Memcached)
-    - [Rabbit MQ](#package-Rabbit-MQ)
-    - [Tomcat](#package-Tomcat)S
-    - [Nginx](#package-Nginx)
-    - [Mysql](#package-Mysql)
+  - [Login to AWS Account ](#electric_plug-login-to-aws-account )
+  - [Create Key Pairs](#package-create-key-pairs)
+  - [Create Security groups](#package-create-security-groups)
+  - [Launch Instances with user data](#bulb-launch-instances-with-user-data )
+  - [Update IP to name mapping in route 53](#heavy_check_mark-update-ip-to-name-mapping-in-route-53)
+  - [Build Application from source code](#package-build-application-from-source-code)
+  - [Upload to S3 bucket](#package-upload-to-S3-bucket)
+  - [Download artifact to Tomcat Ec2 Instance](#package-download-artifact-to-tomcat-ec2-instance)
+  - [Setup ELB with HTTPS ](#package-setup-elb-with-https )
+  - [Map ELB Endpoint to website name in DNS](#package-map-elb-endpoint-to-website-name-in-dns)
+  - [Build Autoscaling Group for Tomcat Instances](#package-build-autoscaling-group-for-tomcat-nstances)
 - [App Build](#hammer-build)  
 - [App Deployment](#rocket-deployment) 
 - [Verify from browser](#earth_africa-verify-from-browser) 
@@ -86,6 +85,19 @@
     <b><a href="#Project-03">↥ back to top</a></b>
 </div>
 <br/>
+
+### Login to AWS Account
+### Create Key Pairs
+### Create Security groups
+### Launch Instances with user data 
+### Update IP to name mapping in route 53
+### Build Application from source code
+### Upload to S3 bucket
+### Download artifact to Tomcat Ec2 Instance
+### Setup ELB with HTTPS 
+### Map ELB Endpoint to website name in DNS
+### Build Autoscaling Group for Tomcat Instances
+
 
 ## :hammer_and_wrench: App Build
 
