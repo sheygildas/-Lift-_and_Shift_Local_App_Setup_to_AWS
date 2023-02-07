@@ -421,7 +421,12 @@ Advanced health check settings
 Override: 8080
 Healthy threshold: 3
 available instance: app01 
-   ``````sh
+   ```
+
+- Create the load balancer with the following details.
+
+
+```sh
 Name: vprofile-prod-elb
 Internet Facing
 Select all AZs
@@ -430,7 +435,6 @@ Listeners: HTTP, HTTPS
 Select the certificate for HTTPS
    ```
 
-- Create the load balancer with the following details.
 
 
 
@@ -441,6 +445,17 @@ Select the certificate for HTTPS
 <br/>
 
 ### :earth_africa: Map ELB Endpoint to website name in DNS
+
+- Create A record and map ELB endpoint so that we can use our domain name to reach our application.
+
+![Project Image](project-image-url)
+
+
+- Verify our application using our DNS. Our applicatin can be reached through 'HTTPS' connect.
+
+
+![Project Image](project-image-url)
+
 
 <br/>
 <div align="right">
