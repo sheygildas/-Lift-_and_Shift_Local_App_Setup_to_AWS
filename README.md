@@ -102,7 +102,7 @@
 <br/>
 <div align="right">
     <b><a href="#Project-03">↥ back to top</a></b>
-</div>
+</div>`
 <br/>
 
 ### :closed_lock_with_key: Create Key Pairs
@@ -114,6 +114,28 @@
 <br/>
 
 ### :lock: Create Security groups
+
+- Let's start by creating security group for the load-balancer and name it "vprofile-ELB-SG'. 
+- Set 'inbound rules' to allow 'HTTP' on port '80' and 'HTTPS' on port 443 from Anywhere
+
+![Project Image](project-image-url)
+
+- Create another security group for our application and name it 'vprofile-app-SG'. 
+- Set 'inbound rules' to allow port '8080' to accept traffic from from the load-balancer security group 'vprofile-ELb-SG'.
+
+
+
+![Project Image](project-image-url)
+
+
+- Lastly, create a security group for the backend services and name it 'vprofile-backend-SG'. 
+- Set 'inbound rules' to allow  11211 for Memcached, 5672 for RabbitMQ and port 3306 for MySQL server.
+- Note: application.properties file found under [src/main/resources](https://github.com/sheygildas/Local_App_Setup/tree/local-setup/src/main/resources) directory, contain all the port rhat have to be open for our application services to communicate each other. 
+- Allow all traffic from backends' own security group so that the backend services can communicate with each other.
+
+
+![Project Image](project-image-url)
+
 
 <br/>
 <div align="right">
