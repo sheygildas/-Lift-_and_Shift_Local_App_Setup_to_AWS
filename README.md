@@ -493,6 +493,9 @@ Target Tracking-CPU Utilization 50
 - Now let's terminate our instance manually and watch Autoscalling group create a new one using Launch Temlate.
 
 ![Project Image](project-image-url)
+
+
+
 <br/>
 <div align="right">
     <b><a href="#Project-03">↥ back to top</a></b>
@@ -507,6 +510,9 @@ Target Tracking-CPU Utilization 50
 </div>
 <br/>
 
+## :broom: Clean-Up
+
+- Delete all resources to avoid any charges from AWS.
 
 ## :page_facing_up: Resources
 
