@@ -231,8 +231,6 @@ systemctl status rabbitmq-server
    
 ![Project Image](project-image-url)
 
-#### Provision DB Instance
-#### Provision DB Instance
  
 <br/>
 <div align="right">
@@ -241,6 +239,21 @@ systemctl status rabbitmq-server
 <br/>
 
 ### :earth_africa: Update IP to name mapping in route 53
+
+- Now that our Backend instances are up and running, it time to update the private IP of our backend services in Route53 Private DNS Zone
+- Check the private IP address of your instances and update them in Route 53.
+
+
+![Project Image](project-image-url)
+
+- Create a Private Hosted zone in Route53 and name it "vprofile.in'.
+
+![Project Image](project-image-url)
+
+- Create records for our backend services and add the record names in our application.properties file found in this location [location](https://github.com/sheygildas/Local_App_Setup/blob/local-setup/vagrant/Automated_provisioning/application.properties).
+ 
+ ![Project Image](project-image-url)
+
 
 <br/>
 <div align="right">
