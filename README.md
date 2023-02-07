@@ -148,9 +148,11 @@
 
 ### :bulb: Launch Instances with user data 
 
+- Note: Launching  Instances with user data  may take some time. If you SSH into the server and the user data is not yet provision, you can check the process 'ps -ef' to see if the process to provision user data has started or failed. If the process has started, wait for sometime and check with 'systemctl status' '<service_name>' command again.
+
 #### Provision DB Instance
 
-- We will start by creating  DB instance below details. The user data script is found at this [location](https://github.com/sheygildas/Local_App_Setup/blob/local-setup/vagrant/Automated_provisioning/mysql.sh)
+- We will start by creating DB instance with details as given below. The user data script is found at this [location](https://github.com/sheygildas/Local_App_Setup/blob/local-setup/vagrant/Automated_provisioning/mysql.sh)
 - We also have to add 'inbound rule' to 'vprofile-backend-SG' which is our backend SG to ALLOW SSH on port 22 from My IP to be able to connect our db instance.
 
  ```sh
@@ -179,7 +181,7 @@ systemctl status mariadb
 
 #### Provision Memcached Instance
 
-- Create Memcached instance with below details.
+- We will start by creating memcached instance with details as given below.
 
 ```sh
 Name of Instance : vprofile-mc01
@@ -206,7 +208,29 @@ ss -tunpl | grep 11211
 ![Project Image](project-image-url)
 
 
-#### Provision DB Instance
+#### Provision RabbitMQ Instance
+
+- We will start by creating RabbitMQ instance with details as given below. The user data script is found at this [location](https://github.com/sheygildas/Local_App_Setup/blob/local-setup/vagrant/Automated_provisioning/rabbitmq.sh)
+ 
+ ```sh
+Name of Instance: vprofile-rmq01
+Project: vprofile
+AMI: Centos 7
+InstanceType: t2.micro
+SecGrp: vprofile-backend-SG
+UserData: rabbitmq.sh
+   ```
+- When the instance is up and running, SSH into the server and check if userdata script is executed. If everything is ok proceed to check the status of rabbitmq
+
+ ```sh
+ssh -i vprofile-prod-key.pem centos@<public_ip_of_instance>
+sudo su -
+curl http://169.254.169.254/latest/user-data
+systemctl status rabbitmq-server
+   ```
+   
+![Project Image](project-image-url)
+
 #### Provision DB Instance
 #### Provision DB Instance
  
