@@ -435,9 +435,6 @@ Listeners: HTTP, HTTPS
 Select the certificate for HTTPS
    ```
 
-
-
-
 <br/>
 <div align="right">
     <b><a href="#Project-03">↥ back to top</a></b>
@@ -465,6 +462,37 @@ Select the certificate for HTTPS
 
 ### :hammer_and_wrench: Build Autoscaling Group for Tomcat Instances
 
+- Let's stop our tomcat instance and create an AMI.
+
+![Project Image](project-image-url)
+
+
+ - Let's create a Launch template using the AMI created in above step for our autoscalling group.
+
+
+```sh
+Name: vprofile-app-LT
+AMI: vprofile-app-image
+InstanceType: t2.micro
+IAM Profile: vprofile-artifact-storage-role
+SecGrp: vprofile-app-SG
+KeyPair: vprofile-prod-key
+   ```
+- Now let's create our Autoscalling group with the following details.
+
+```sh
+Name: vprofile-app-ASG
+ELB healthcheck
+Add ELB
+Min:1
+Desired:2
+Max:4
+Target Tracking-CPU Utilization 50
+   ```
+
+- Now let's terminate our instance manually and watch Autoscalling group create a new one using Launch Temlate.
+
+![Project Image](project-image-url)
 <br/>
 <div align="right">
     <b><a href="#Project-03">↥ back to top</a></b>
