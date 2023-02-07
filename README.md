@@ -107,6 +107,10 @@
 
 ### :closed_lock_with_key: Create Key Pairs
 
+- Now that yu are login let's create a Keypair to connect our EC2 instances through SSH.
+
+![Project Image](project-image-url)
+
 <br/>
 <div align="right">
     <b><a href="#Project-03">↥ back to top</a></b>
@@ -141,9 +145,35 @@
 <div align="right">
     <b><a href="#Project-03">↥ back to top</a></b>
 </div>
-<br/>
 
 ### :bulb: Launch Instances with user data 
+
+- We will start by creating  DB instance below details. The user data script is found at this [location](https://github.com/sheygildas/Local_App_Setup/blob/local-setup/vagrant/Automated_provisioning/mysql.sh)
+- We also have to add 'inbound rule' to 'vprofile-backend-SG' which is our backend SG to ALLOW SSH on port 22 from My IP to be able to connect our db instance.
+
+ ```sh
+Name of Instance: vprofile-db01
+Project: vprofile
+AMI: Centos 7
+InstanceType: t2.micro
+SecGrp: vprofile-backend-SG
+UserData: mysql.sh
+   ```
+   
+- Let't launch our EC2 instance using the above userdata.
+   
+![Project Image](project-image-url)
+
+- When the instance is up and running, SSH into the server and check if userdata script is executed. If everything is ok proceed to check the status of mariadb.
+
+```sh
+ssh -i vprofile-prod-key.pem centos@<public_ip_of_instance>
+sudo su -
+curl http://169.254.169.254/latest/user-data
+systemctl status mariadb
+   ```
+
+![Project Image](project-image-url)
 
 <br/>
 <div align="right">
