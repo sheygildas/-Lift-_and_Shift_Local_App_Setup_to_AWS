@@ -14,7 +14,7 @@
   - [Create Security groups](#lock-create-security-groups)
   - [Launch Instances with user data](#bulb-launch-instances-with-user-data )
   - [Update IP to name mapping in route 53](#earth_africa-update-ip-to-name-mapping-in-route-53)
-  - [Build Application from source code](#hammer_and_wrench-build-application-from-source-code)
+  - [Build Application from source code locally](#hammer_and_wrench-build-application-from-source-code-locally)
   - [Upload to S3 bucket](#rocket-upload-to-S3-bucket)
   - [Download artifact to Tomcat Ec2 Instance](#package-download-artifact-to-tomcat-ec2-instance)
   - [Setup ELB with HTTPS ](#lock-setup-elb-with-https )
@@ -275,8 +275,36 @@ UserData: tomcat_ubuntu.sh
 </div>
 <br/>
 
-### :hammer_and_wrench: Build Application from source code
+### :hammer_and_wrench: Build Application from source code locally
 
+- We need to update our [application.properties file](https://github.com/sheygildas/Local_App_Setup/blob/local-setup/vagrant/Automated_provisioning/application.properties) with the details below before building the artifact.
+
+```sh
+jdbc.url=jdbc:mysql://db01.vprofile.in:3306/accounts?useUnicode=true&
+
+memcached.active.host=mc01.vprofile.in
+
+rabbitmq.address=rmq01.vprofile.in
+   ```
+- Clone the repo below 
+
+```sh
+git clone https://github.com/sheygildas/Local_App_Setup.git
+   ```
+   
+-  On you gitbash, go to 'Local_App_Setup' root directory where pom.xml exists. RUN the command below to create our artifact 'vprofile-v2.war'
+
+```sh
+mvn install
+   ```
+ - change into the 'target' directory and 'list' the file you will see the artifact.
+
+```sh
+cd target
+ls
+   ```
+
+![Project Image](project-image-url)
 
 
 <br/>
@@ -286,6 +314,42 @@ UserData: tomcat_ubuntu.sh
 <br/>
 
 ### :rocket: Upload to S3 bucket
+
+- Before uploading our artifact to S3 bucket, let's create an IAM user with the details below.
+
+```sh
+name: vprofile-s3-admin
+Access key - Programmatic access
+Policy: s3FullAccess
+   ```
+- Let's configure "aws cli' to use IAM user credentials.Use the credentials of your own IAM user.
+
+```sh
+aws configure
+AccessKeyID: 
+SecretAccessKey:
+region: us-east-1
+format: json
+   ```
+
+- Let's create our S3 bucket though the 'aws cli'. Note: S3 buckets naming must be UNIQUE!
+
+```sh
+aws s3 mb s3://vprofile-artifact-shift-lift-local
+   ```
+
+- We will upload our artifact to s3 bucket from AWS CLI and our Tomcat server will get the same artifact from s3 bucket.
+
+- On your 'aws cli' go to 'target' directory and copy the artifact to S3 bucket with below command. Then verify by listing objects in the s3 bucket.
+
+
+```sh
+aws s3 cp s3://vprofile-artifact-shift-lift-local
+aws s3 ls vprofile-artifact-shift-lift-local
+   ```
+- login through the console and verify if everything has been created.
+
+
 
 <br/>
 <div align="right">
