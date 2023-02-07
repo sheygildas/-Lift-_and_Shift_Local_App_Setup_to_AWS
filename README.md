@@ -231,7 +231,21 @@ systemctl status rabbitmq-server
    
 ![Project Image](project-image-url)
 
+#### Provision Application Instance
+
+- We will start by creating Application instance with details as given below. The user data script is found at this [location](https://github.com/sheygildas/Local_App_Setup/blob/local-setup/vagrant/Automated_provisioning/tomcat_ubuntu.sh)
  
+ 
+ ```sh
+Name: vprofile-app01
+Project: vprofile
+AMI: Ubuntu 18.04
+InstanceType: t2.micro
+SecGrp: vprofile-app-SG
+UserData: tomcat_ubuntu.sh
+   ```
+- Add Inbound rule to 'vprofile-app-SG' for SSH on port 22 from My IP to be able to connect our db instance via SSH.
+
 <br/>
 <div align="right">
     <b><a href="#Project-03">↥ back to top</a></b>
@@ -262,6 +276,8 @@ systemctl status rabbitmq-server
 <br/>
 
 ### :hammer_and_wrench: Build Application from source code
+
+
 
 <br/>
 <div align="right">
