@@ -410,6 +410,30 @@ telnet db01.vprofile.in 3306
 
 ### :lock: Setup ELB with HTTPS 
 
+- Create Target Group for our load banlancer with the following details.
+
+```sh
+Intances
+Target Grp Name: vprofile-elb-TG
+protocol-port: HTTP:8080
+healtcheck path : /login
+Advanced health check settings
+Override: 8080
+Healthy threshold: 3
+available instance: app01 
+   ``````sh
+Name: vprofile-prod-elb
+Internet Facing
+Select all AZs
+SecGrp: vprofile-elb-SG
+Listeners: HTTP, HTTPS
+Select the certificate for HTTPS
+   ```
+
+- Create the load balancer with the following details.
+
+
+
 <br/>
 <div align="right">
     <b><a href="#Project-03">↥ back to top</a></b>
