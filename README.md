@@ -148,6 +148,8 @@
 
 ### :bulb: Launch Instances with user data 
 
+#### Provision DB Instance
+
 - We will start by creating  DB instance below details. The user data script is found at this [location](https://github.com/sheygildas/Local_App_Setup/blob/local-setup/vagrant/Automated_provisioning/mysql.sh)
 - We also have to add 'inbound rule' to 'vprofile-backend-SG' which is our backend SG to ALLOW SSH on port 22 from My IP to be able to connect our db instance.
 
@@ -175,6 +177,39 @@ systemctl status mariadb
 
 ![Project Image](project-image-url)
 
+#### Provision Memcached Instance
+
+- Create Memcached instance with below details.
+
+```sh
+Name of Instance : vprofile-mc01
+Project: vprofile
+AMI: Centos 7
+InstanceType: t2.micro
+SecGrp: vprofile-backend-SG
+UserData: memcache.sh
+   ```
+- - Let't launch our EC2 instance using the above userdata. The user data script is found at this [location](https://github.com/sheygildas/Local_App_Setup/blob/local-setup/vagrant/Automated_provisioning/memcache.sh)
+
+![Project Image](project-image-url)
+
+- When the instance is up and running, SSH into the server and check if userdata script is executed. If everything is ok proceed to check the status of memcached.
+ 
+```sh
+ssh -i vprofile-prod-key.pem centos@<public_ip_of_instance>
+sudo su -
+curl http://169.254.169.254/latest/user-data
+systemctl status memcached.service
+ss -tunpl | grep 11211
+   ```
+
+![Project Image](project-image-url)
+
+
+#### Provision DB Instance
+#### Provision DB Instance
+#### Provision DB Instance
+ 
 <br/>
 <div align="right">
     <b><a href="#Project-03">↥ back to top</a></b>
