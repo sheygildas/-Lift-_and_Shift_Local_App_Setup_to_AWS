@@ -349,6 +349,7 @@ aws s3 ls vprofile-artifact-shift-lift-local
    ```
 - login through the console and verify if everything has been created.
 
+![Project Image](project-image-url)
 
 
 <br/>
@@ -359,6 +360,48 @@ aws s3 ls vprofile-artifact-shift-lift-local
 
 ### :package: Download artifact to Tomcat Ec2 Instance
 
+-  Create 'IAM role' for Tomcat and attach the tomcat server to the role.The role show have the following details.
+
+
+```sh
+Type: EC2
+Name: vprofile-artifact-storage-role
+Policy: s3FullAccess
+   ```
+
+- let's SSH into our tomcat server.
+
+```sh
+ssh -i "vprofile-prod-key.pem" ubuntu@<public_ip_of_server>
+sudo su -
+systemctl status tomcat8s
+   ```
+![Project Image](project-image-url)
+
+- Stop tomcat and remove 'ROOT' (default tomcat app files are stored here) directory under '/var/lib/tomcat8/webapps/'. 
+
+```sh
+cd /var/lib/tomcat8/webapps/
+systemctl stop tomcat8
+rm -rf ROOT
+   ```
+   
+- Now let's install 'aws cli' on our tomcate server and use it to download our artifact from S3 bucket.The artifactwill be downloaded to '/tmp' directory, then we will copy to '/var/lib/tomcat8/webapps/' directory as 'ROOT.war'.
+
+```sh
+apt install awscli -y
+aws s3 ls s3://vprofile-artifact-storage-rd
+aws s3 cp s3://vprofile-artifact-storage-rd/vprofile-v2.war /tmp/vprofile-v2.war
+cd /tmp
+cp vprofile-v2.war /var/lib/tomcat8/webapps/ROOT.war
+systemctl start tomcat8
+   ``` 
+- Check network connectivity from server using 'telnet'
+
+```sh
+apt install telnet
+telnet db01.vprofile.in 3306
+   ```
 <br/>
 <div align="right">
     <b><a href="#Project-03">↥ back to top</a></b>
