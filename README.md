@@ -153,8 +153,8 @@
 
 #### Provision DB Instance
 
-- We will start by creating DB instance with details as given below. The user data script is found at this [location](https://github.com/sheygildas/Local_App_Setup/blob/local-setup/vagrant/Automated_provisioning/mysql.sh)
-- We also have to add 'inbound rule' to 'vprofile-backend-SG' which is our backend SG to ALLOW SSH on port 22 from My IP to be able to connect our db instance.
+- We will start by creating `DB` instance with details as given below. The user data script is found at this [location](https://github.com/sheygildas/Local_App_Setup/blob/local-setup/vagrant/Automated_provisioning/mysql.sh)
+- We also have to add 'inbound rule' to 'vprofile-backend-SG' which is our backend SG to ALLOW `SSH` on port`22` from My IP to be able to connect our db instance.
 
  ```sh
 Name of Instance: vprofile-db01
@@ -169,7 +169,7 @@ UserData: mysql.sh
    
 ![Project Image](project-image-url)
 
-- When the instance is up and running, SSH into the server and check if userdata script is executed. If everything is ok proceed to check the status of mariadb.
+- When the instance is up and running, `SSH` into the server and check if userdata script is executed. If everything is ok proceed to check the status of mariadb.
 
 ```sh
 ssh -i vprofile-prod-key.pem centos@<public_ip_of_instance>
@@ -196,7 +196,7 @@ UserData: memcache.sh
 
 ![Project Image](project-image-url)
 
-- When the instance is up and running, SSH into the server and check if userdata script is executed. If everything is ok proceed to check the status of memcached.
+- When the instance is up and running, `SSH` into the server and check if userdata script is executed. If everything is ok proceed to check the status of memcached.
  
 ```sh
 ssh -i vprofile-prod-key.pem centos@<public_ip_of_instance>
@@ -245,7 +245,7 @@ InstanceType: t2.micro
 SecGrp: vprofile-app-SG
 UserData: tomcat_ubuntu.sh
    ```
-- Add Inbound rule to 'vprofile-app-SG' for SSH on port 22 from My IP to be able to connect our db instance via SSH.
+- Add `Inbound rule` to `vprofile-app-SG` for SSH on `port 22` from My IP to be able to connect our `db` instance via `SSH`.
 
 <br/>
 <div align="right">
@@ -293,7 +293,7 @@ rabbitmq.address=rmq01.vprofile.in
 git clone https://github.com/sheygildas/Local_App_Setup.git
    ```
    
--  On you gitbash, go to 'Local_App_Setup' root directory where pom.xml exists. RUN the command below to create our artifact 'vprofile-v2.war'
+-  On you gitbash, go to `Local_App_Setup` root directory where pom.xml exists. RUN the command below to create our artifact `vprofile-v2.war`
 
 ```sh
 mvn install
@@ -316,7 +316,7 @@ ls
 
 ### :rocket: Upload to S3 bucket
 
-- Before uploading our artifact to S3 bucket, let's create an IAM user with the details below.
+- Before uploading our artifact to S3 bucket, let's create an `IAM user` with the details below.
 
 ```sh
 name: vprofile-s3-admin
@@ -339,9 +339,9 @@ format: json
 aws s3 mb s3://vprofile-artifact-shift-lift-local
    ```
 
-- We will upload our artifact to s3 bucket from AWS CLI and our Tomcat server will get the same artifact from s3 bucket.
+- We will upload our `artifact` to `s3 bucket` from AWS CLI and our Tomcat server will get the same artifact from `s3 bucket`.
 
-- On your 'aws cli' go to 'target' directory and copy the artifact to S3 bucket with below command. Then verify by listing objects in the s3 bucket.
+- On your `aws cli` go to `target` directory and copy the artifact to S3 bucket with below command. Then verify by listing objects in the s3 bucket.
 
 
 ```sh
@@ -361,7 +361,7 @@ aws s3 ls vprofile-artifact-shift-lift-local
 
 ### :package: Download artifact to Tomcat Ec2 Instance
 
--  Create 'IAM role' for Tomcat and attach the tomcat server to the role.The role show have the following details.
+-  Create `IAM role` for Tomcat and attach the tomcat server to the role.The role show have the following details.
 
 
 ```sh
@@ -379,7 +379,7 @@ systemctl status tomcat8s
    ```
 ![Project Image](project-image-url)
 
-- Stop tomcat and remove 'ROOT' (default tomcat app files are stored here) directory under '/var/lib/tomcat8/webapps/'. 
+- Stop tomcat and remove `ROOT` (default tomcat app files are stored here) directory under `/var/lib/tomcat8/webapps/`. 
 
 ```sh
 cd /var/lib/tomcat8/webapps/
@@ -387,7 +387,7 @@ systemctl stop tomcat8
 rm -rf ROOT
    ```
    
-- Now let's install 'aws cli' on our tomcate server and use it to download our artifact from S3 bucket.The artifactwill be downloaded to '/tmp' directory, then we will copy to '/var/lib/tomcat8/webapps/' directory as 'ROOT.war'.
+- Now let's install `aws cli` on our tomcate server and use it to download our artifact from S3 bucket.The artifactwill be downloaded to `/tmp` directory, then we will copy to `/var/lib/tomcat8/webapps/` directory as `ROOT.war`.
 
 ```sh
 apt install awscli -y
@@ -444,12 +444,12 @@ Select the certificate for HTTPS
 
 ### :earth_africa: Map ELB Endpoint to website name in DNS
 
-- Create A record and map ELB endpoint so that we can use our domain name to reach our application.
+- Create `A record` and map ELB endpoint so that we can use our domain name to reach our application.
 
 ![Project Image](project-image-url)
 
 
-- Verify our application using our DNS. Our applicatin can be reached through 'HTTPS' connect.
+- Verify our application using our `DNS`. Our applicatin can be reached through `HTTPS` connect.
 
 
 ![Project Image](project-image-url)
@@ -463,12 +463,12 @@ Select the certificate for HTTPS
 
 ### :hammer_and_wrench: Build Autoscaling Group for Tomcat Instances
 
-- Let's stop our tomcat instance and create an AMI.
+- Let's stop our tomcat instance and create an `AMI`.
 
 ![Project Image](project-image-url)
 
 
- - Let's create a Launch template using the AMI created in above step for our autoscalling group.
+ - Let's create a `Launch template` using the AMI created in above step for our autoscalling group.
 
 
 ```sh
