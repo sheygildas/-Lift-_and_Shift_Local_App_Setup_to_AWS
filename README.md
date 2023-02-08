@@ -25,7 +25,7 @@
 - [Credit/Acknowledgment](#star2-creditacknowledgment)
 
 
-`my-pages`
+
 ## :beginner:About The Project
 
 <br/>
@@ -108,7 +108,7 @@
 
 ### :closed_lock_with_key: Create Key Pairs
 
-- Now that yu are login let's create a Keypair to connect our EC2 instances through SSH.
+- Now that yu are `login` let's create a Keypair to connect our EC2 instances through `SSH`.
 
 ![Project Image](project-image-url)
 
@@ -120,21 +120,21 @@
 
 ### :lock: Create Security groups
 
-- Let's start by creating security group for the load-balancer and name it "vprofile-ELB-SG'. 
-- Set 'inbound rules' to allow 'HTTP' on port '80' and 'HTTPS' on port 443 from Anywhere
+- Let's start by creating `security group` for the load-balancer and name it `vprofile-ELB-SG`. 
+- Set `inbound rules` to allow `HTTP` on port `80` and `HTTPS` on port `443` from Anywhere
 
 ![Project Image](project-image-url)
 
-- Create another security group for our application and name it 'vprofile-app-SG'. 
-- Set 'inbound rules' to allow port '8080' to accept traffic from from the load-balancer security group 'vprofile-ELb-SG'.
+- Create another security group for our application and name it `vprofile-app-SG`. 
+- Set `inbound rules` to allow port `8080` to accept traffic from from the load-balancer security group `vprofile-ELb-SG`.
 
 
 
 ![Project Image](project-image-url)
 
 
-- Lastly, create a security group for the backend services and name it 'vprofile-backend-SG'. 
-- Set 'inbound rules' to allow  11211 for Memcached, 5672 for RabbitMQ and port 3306 for MySQL server.
+- Lastly, create a security group for the `backend services` and name it `vprofile-backend-SG`. 
+- Set `inbound rules` to allow  `11211`for Memcached, `5672` for RabbitMQ and port `3306` for MySQL server.
 - Note: application.properties file found under [src/main/resources](https://github.com/sheygildas/Local_App_Setup/tree/local-setup/src/main/resources) directory, contain all the port rhat have to be open for our application services to communicate each other. 
 - Allow all traffic from backends' own security group so that the backend services can communicate with each other.
 
@@ -149,7 +149,7 @@
 
 ### :bulb: Launch Instances with user data 
 
-- Note: Launching  Instances with user data  may take some time. If you SSH into the server and the user data is not yet provision, you can check the process 'ps -ef' to see if the process to provision user data has started or failed. If the process has started, wait for sometime and check with 'systemctl status' '<service_name>' command again.
+- Note: Launching  Instances with `user data`  may take some time. If you `SSH` into the server and the `user data` is not yet provision, you can check the process `ps -ef` to see if the process to provision user data has started or failed. If the process has started, wait for sometime and check with `systemctl status` `<service_name>` command again.
 
 #### Provision DB Instance
 
